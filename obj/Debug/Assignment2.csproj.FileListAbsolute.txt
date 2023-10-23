@@ -1,0 +1,12 @@
+C:\Users\Administrator\Desktop\Assignment2\bin\Debug\Assignment2.exe.config
+C:\Users\Administrator\Desktop\Assignment2\bin\Debug\Assignment2.exe
+C:\Users\Administrator\Desktop\Assignment2\bin\Debug\Assignment2.pdb
+C:\Users\Administrator\Desktop\Assignment2\obj\Debug\Assignment2.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Assignment2\obj\Debug\Assignment2.AdminManagementForm.resources
+C:\Users\Administrator\Desktop\Assignment2\obj\Debug\Assignment2.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Assignment2\obj\Debug\Assignment2.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Assignment2\obj\Debug\Assignment2.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Assignment2\obj\Debug\Assignment2.exe
+C:\Users\Administrator\Desktop\Assignment2\obj\Debug\Assignment2.pdb
+C:\Users\Administrator\Desktop\Assignment2\obj\Debug\Assignment2.CreateNewEventForm.resources
+C:\Users\Administrator\Desktop\Assignment2\obj\Debug\Assignment2.Events.resources
