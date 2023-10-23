@@ -16,6 +16,8 @@ namespace Assignment2
         User GetUserInfoByID(int ID);
         bool CheckAccountLogin(int ID, string password);
         List<Event> GetEventsByName(String eventName);
+        List<Event> GetEventsByDate(String eventDate);
+
         List<Event> GetEventsByTime(String eventTime);
 
         List<String> GetAllEventsName();

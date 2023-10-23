@@ -52,5 +52,35 @@ namespace Assignment2
             cbb_EventName.SelectedItem = null;
             cbb_EventName.SelectedText = "";
         }
+
+        private void datePicker_ValueChanged(object sender, EventArgs e)
+        {
+            ConnectData connectData = new ConnectData();
+            List<Event> events = connectData.GetEventsByDate(datePicker.Value.ToShortDateString());
+            lv_events.Items.Clear();
+            foreach (var eventData in events)
+            {
+                var row = new string[] {eventData.Name,eventData.Price.ToString()
+                    ,eventData.Capacity.ToString(),eventData.Date,eventData.Time  };
+                var lvi = new ListViewItem(row);
+                lvi.Tag = eventData;
+                lv_events.Items.Add(lvi);
+            }
+        }
+
+        private void timePicker_ValueChanged(object sender, EventArgs e)
+        {
+            ConnectData connectData = new ConnectData();
+            List<Event> events = connectData.GetEventsByTime(timePicker.Text.Trim());
+            lv_events.Items.Clear();
+            foreach (var eventData in events)
+            {
+                var row = new string[] {eventData.Name,eventData.Price.ToString()
+                    ,eventData.Capacity.ToString(),eventData.Date,eventData.Time  };
+                var lvi = new ListViewItem(row);
+                lvi.Tag = eventData;
+                lv_events.Items.Add(lvi);
+            }
+        }
     }
 }

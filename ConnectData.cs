@@ -165,5 +165,14 @@ namespace Assignment2
                          select eventData.Name;
             return events.ToList<String>();
         }
+
+        public List<Event> GetEventsByDate(string eventDate)
+        {
+            List<Event> eventsData = GetAllEventsInfo();
+            var events = from Event eventData in eventsData
+                         where eventData.Date == eventDate
+                         select eventData;
+            return events.ToList<Event>();
+        }
     }
 }
