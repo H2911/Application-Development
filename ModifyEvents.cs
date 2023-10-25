@@ -56,6 +56,7 @@ namespace Assignment2
                 string eventDate = datePicker.Value.ToShortDateString();
                 string eventTime = timePicker.Value.ToShortTimeString().Trim();
                 Event currentEvent = new Event(eventName, eventPrice, eventCapacity, eventDate, eventTime);
+                currentEvent.EventID = int.Parse(lbID.Text.Split(':')[1].Trim());
                 ConnectData connectData = new ConnectData();
                 if (connectData.CancelEvent(currentEvent))
                 {

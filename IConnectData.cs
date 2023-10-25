@@ -15,14 +15,14 @@ namespace Assignment2
         bool CancelEvent(Event eventName);
 
         bool ModifyEvent(Event eventName);
-        List<Event> GetAllEventsInfo();
+        List<Event> GetAllActiveEventsInfo();
         User GetUserInfoByID(int ID);
         bool CheckAccountLogin(int ID, string password);
-        List<Event> GetEventsByName(String eventName);
-        List<Event> GetEventsByDate(String eventDate);
+        List<Event> GetActiveEventsByName(String eventName);
+        List<Event> GetActiveEventsByDate(String eventDate);
 
-        List<Event> GetEventsByTime(String eventTime);
+        List<Event> GetActiveEventsByTime(String eventTime);
 
-        List<String> GetAllEventsName();
+        List<String> GetAllActiveEventsName();
     }
 }

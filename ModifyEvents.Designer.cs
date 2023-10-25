@@ -44,6 +44,7 @@
             this.tb_EventName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bnt_CancelEvent = new System.Windows.Forms.Button();
+            this.lbID = new System.Windows.Forms.Label();
             this.newEventGB.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -220,12 +221,22 @@
             this.bnt_CancelEvent.UseVisualStyleBackColor = true;
             this.bnt_CancelEvent.Click += new System.EventHandler(this.bnt_CancelEvent_Click);
             // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Location = new System.Drawing.Point(698, 36);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(20, 16);
+            this.lbID.TabIndex = 11;
+            this.lbID.Text = "ID";
+            // 
             // ModifyEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbID);
             this.Controls.Add(this.bnt_CancelEvent);
             this.Controls.Add(this.bnt_Discard);
             this.Controls.Add(this.bnt_ConfirmChange);
@@ -260,5 +271,6 @@
         public System.Windows.Forms.TextBox tb_Capacity;
         public System.Windows.Forms.TextBox tb_EventName;
         private System.Windows.Forms.Button bnt_CancelEvent;
+        public System.Windows.Forms.Label lbID;
     }
 }

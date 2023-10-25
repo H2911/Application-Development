@@ -57,17 +57,9 @@ namespace Assignment2
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Save data error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Save data error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-        }
-
-        private int getNewIDEvent()
-        {
-            var file = new StreamReader("Events.txt").ReadToEnd(); 
-            var lines = file.Split(new char[] { '\n' });
-            var count = lines.Length;
-            return lines.Length + 1;
         }
 
         public bool SaveNewUser(User newUser)
@@ -115,7 +107,7 @@ namespace Assignment2
             return user;
         }
 
-        public List<Event> GetAllEventsInfo()
+        public List<Event> GetAllActiveEventsInfo()
         {
             List<Event> events = new List<Event>();
             string[] eventsData = File.ReadAllLines(EVENTS_PATH);
@@ -128,29 +120,33 @@ namespace Assignment2
             string eventStatus = "";
             foreach (string eventData in eventsData)
             {
-                eventID = int.Parse(eventData.Split(',')[0].Trim());
-                eventName = eventData.Split(',')[1].Trim();
-                eventPrice = int.Parse(eventData.Split(',')[2].Trim());
-                eventCapacity = int.Parse(eventData.Split(',')[3].Trim());
-                eventDate = eventData.Split(',')[4].Trim();
-                eventTime = eventData.Split(',')[5].Trim();
                 eventStatus = eventData.Split(',')[6].Trim();
-                events.Add(new Event(eventID, eventName, eventPrice, eventCapacity, eventDate, eventTime, eventStatus)); 
+                if(eventStatus == "Active")
+                {
+                    eventID = int.Parse(eventData.Split(',')[0].Trim());
+                    eventName = eventData.Split(',')[1].Trim();
+                    eventPrice = int.Parse(eventData.Split(',')[2].Trim());
+                    eventCapacity = int.Parse(eventData.Split(',')[3].Trim());
+                    eventDate = eventData.Split(',')[4].Trim();
+                    eventTime = eventData.Split(',')[5].Trim();
+                    events.Add(new Event(eventID, eventName, eventPrice, eventCapacity, eventDate, eventTime, eventStatus));
+                }
+                
             }
             return events;
         }
-        public List<Event> GetEventsByName(string EventName)
+        public List<Event> GetActiveEventsByName(string EventName)
         {
-            List<Event> eventsData = GetAllEventsInfo();
+            List<Event> eventsData = GetAllActiveEventsInfo();
             var events = from Event eventData in eventsData
                      where eventData.Name == EventName
                      select eventData;
             return events.ToList<Event>();
         }
 
-        public List<Event> GetEventsByTime(string eventTime)
+        public List<Event> GetActiveEventsByTime(string eventTime)
         {
-            List<Event> eventsData = GetAllEventsInfo();
+            List<Event> eventsData = GetAllActiveEventsInfo();
             var events = from Event eventData in eventsData
                          where eventData.Time == eventTime
                          select eventData;
@@ -174,17 +170,17 @@ namespace Assignment2
             return false;
         }
 
-        public List<String> GetAllEventsName()
+        public List<String> GetAllActiveEventsName()
         {
-            List<Event> eventsData = GetAllEventsInfo();
+            List<Event> eventsData = GetAllActiveEventsInfo();
             var events = from Event eventData in eventsData
                          select eventData.Name;
             return events.ToList<String>();
         }
 
-        public List<Event> GetEventsByDate(string eventDate)
+        public List<Event> GetActiveEventsByDate(string eventDate)
         {
-            List<Event> eventsData = GetAllEventsInfo();
+            List<Event> eventsData = GetAllActiveEventsInfo();
             var events = from Event eventData in eventsData
                          where eventData.Date == eventDate
                          select eventData;
@@ -204,11 +200,25 @@ namespace Assignment2
                 {
                     if (currentLine == cancelEvent.EventID)
                     {
-                        writer.WriteLine(cancelEvent.ToString());
+                        if (currentLine == lines.Length)
+                        {
+                            writer.Write(cancelEvent.ToString());
+                        }
+                        else
+                        {
+                            writer.WriteLine(cancelEvent.ToString());
+                        }
                     }
                     else
                     {
-                        writer.WriteLine(lines[currentLine - 1]);
+                        if(currentLine == lines.Length)
+                        {
+                            writer.WriteLine(lines[currentLine - 1]);
+                        }
+                        else
+                        {
+                            writer.WriteLine(lines[currentLine - 1]);
+                        }
                     }
                 }
             }

@@ -33,7 +33,7 @@ namespace Assignment2
         private void cbb_EventName_SelectedValueChanged(object sender, EventArgs e)
         {
             ConnectData connectData = new ConnectData();
-            List<Event> events = connectData.GetEventsByName(cbb_EventName.GetItemText(cbb_EventName.SelectedItem));
+            List<Event> events = connectData.GetActiveEventsByName(cbb_EventName.GetItemText(cbb_EventName.SelectedItem));
             lv_events.Items.Clear();
             foreach (var eventData in events)
             {
@@ -48,7 +48,7 @@ namespace Assignment2
         private void Events_Load(object sender, EventArgs e)
         {
             ConnectData connectData = new ConnectData();
-            cbb_EventName.DataSource = connectData.GetAllEventsName();
+            cbb_EventName.DataSource = connectData.GetAllActiveEventsName();
             cbb_EventName.SelectedItem = null;
             cbb_EventName.SelectedText = "";
         }
@@ -56,12 +56,12 @@ namespace Assignment2
         private void datePicker_ValueChanged(object sender, EventArgs e)
         {
             ConnectData connectData = new ConnectData();
-            List<Event> events = connectData.GetEventsByDate(datePicker.Value.ToShortDateString());
+            List<Event> events = connectData.GetActiveEventsByDate(datePicker.Value.ToShortDateString());
             lv_events.Items.Clear();
             foreach (var eventData in events)
             {
                 var row = new string[] {eventData.EventID.ToString(), eventData.Name,eventData.Price.ToString()
-                    ,eventData.Capacity.ToString(),eventData.Date,eventData.Time  };
+                    ,eventData.Capacity.ToString(),eventData.Date,eventData.Time};
                 var lvi = new ListViewItem(row);
                 lvi.Tag = eventData;
                 lv_events.Items.Add(lvi);
@@ -71,7 +71,7 @@ namespace Assignment2
         private void timePicker_ValueChanged(object sender, EventArgs e)
         {
             ConnectData connectData = new ConnectData();
-            List<Event> events = connectData.GetEventsByTime(timePicker.Text.Trim());
+            List<Event> events = connectData.GetActiveEventsByTime(timePicker.Text.Trim());
             lv_events.Items.Clear();
             foreach (var eventData in events)
             {
@@ -86,11 +86,13 @@ namespace Assignment2
         private void lv_events_DoubleClick(object sender, EventArgs e)
         {
             ModifyEvents modifyEvents = new ModifyEvents();
+            int eventID = int.Parse(lv_events.SelectedItems[0].Text);
             string eventName = lv_events.SelectedItems[0].SubItems[1].Text;
             int eventPrice = int.Parse(lv_events.SelectedItems[0].SubItems[2].Text);
             int eventCapacity = int.Parse(lv_events.SelectedItems[0].SubItems[3].Text);
             string eventDate = lv_events.SelectedItems[0].SubItems[4].Text;
             string eventTime = lv_events.SelectedItems[0].SubItems[5].Text;
+            modifyEvents.lbID.Text = "ID: " + eventID.ToString();
             modifyEvents.tb_EventName.Text = eventName;
             modifyEvents.tb_EventPrice.Text = eventPrice.ToString();
             modifyEvents.tb_Capacity.Text = eventCapacity.ToString();
