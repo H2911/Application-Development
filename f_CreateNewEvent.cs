@@ -59,7 +59,7 @@ namespace Assignment2
                 int eventPrice = int.Parse(tb_EventPrice.Text.Trim());
                 int eventCapacity = int.Parse(tb_Capacity.Text.Trim());
                 string eventDate = datePicker.Value.ToShortDateString();
-                string eventTime = timePicker.Text.Trim();
+                string eventTime = timePicker.Value.ToShortTimeString().Trim();
                 Event newEvent = new Event(eventName, eventPrice, eventCapacity, eventDate, eventTime);
                 if (connectData.SaveNewEvent(newEvent))
                 {

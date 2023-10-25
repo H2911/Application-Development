@@ -42,11 +42,15 @@ namespace Assignment2
                 var f = new FileInfo(EVENTS_PATH);
                 if (f.Length == 0)
                 {
+                    int lines = File.ReadAllLines(EVENTS_PATH).Length;
+                    newEvent.EventID = lines + 1;
                     File.AppendAllText(EVENTS_PATH, String.Format("{0}", newEvent.ToString()));
                     return true;
                 }
                 else
                 {
+                    int lines = File.ReadAllLines(EVENTS_PATH).Length;
+                    newEvent.EventID = lines + 1;
                     File.AppendAllText(EVENTS_PATH, String.Format("\n{0}", newEvent.ToString()));
                     return true;
                 }
@@ -56,6 +60,14 @@ namespace Assignment2
                 MessageBox.Show(ex.Message,"Save data error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return false;
             }
+        }
+
+        private int getNewIDEvent()
+        {
+            var file = new StreamReader("Events.txt").ReadToEnd(); 
+            var lines = file.Split(new char[] { '\n' });
+            var count = lines.Length;
+            return lines.Length + 1;
         }
 
         public bool SaveNewUser(User newUser)
@@ -107,19 +119,23 @@ namespace Assignment2
         {
             List<Event> events = new List<Event>();
             string[] eventsData = File.ReadAllLines(EVENTS_PATH);
+            int eventID = 0;
             string eventName = "";
             int eventPrice = 0;
             int eventCapacity = 0;
             string eventDate = "";
             string eventTime = "";
+            string eventStatus = "";
             foreach (string eventData in eventsData)
             {
-                eventName = eventData.Split(',')[0].Trim();
-                eventPrice = int.Parse(eventData.Split(',')[1].Trim());
-                eventCapacity = int.Parse(eventData.Split(',')[2].Trim());
-                eventDate = eventData.Split(',')[3].Trim();
-                eventTime = eventData.Split(',')[4].Trim();
-                events.Add(new Event(eventName, eventPrice, eventCapacity, eventDate, eventTime)); 
+                eventID = int.Parse(eventData.Split(',')[0].Trim());
+                eventName = eventData.Split(',')[1].Trim();
+                eventPrice = int.Parse(eventData.Split(',')[2].Trim());
+                eventCapacity = int.Parse(eventData.Split(',')[3].Trim());
+                eventDate = eventData.Split(',')[4].Trim();
+                eventTime = eventData.Split(',')[5].Trim();
+                eventStatus = eventData.Split(',')[6].Trim();
+                events.Add(new Event(eventID, eventName, eventPrice, eventCapacity, eventDate, eventTime, eventStatus)); 
             }
             return events;
         }
@@ -173,6 +189,35 @@ namespace Assignment2
                          where eventData.Date == eventDate
                          select eventData;
             return events.ToList<Event>();
+        }
+
+        public bool CancelEvent(Event cancelEvent)
+        {
+            cancelEvent.Status = "Deactive";
+            // Read the old file.
+            string[] lines = File.ReadAllLines(EVENTS_PATH);
+
+            // Write the new file over the old file.
+            using (StreamWriter writer = new StreamWriter(EVENTS_PATH))
+            {
+                for (int currentLine = 1; currentLine <= lines.Length; ++currentLine)
+                {
+                    if (currentLine == cancelEvent.EventID)
+                    {
+                        writer.WriteLine(cancelEvent.ToString());
+                    }
+                    else
+                    {
+                        writer.WriteLine(lines[currentLine - 1]);
+                    }
+                }
+            }
+            return true;
+        }
+
+        public bool ModifyEvent(Event eventName)
+        {
+            throw new NotImplementedException();
         }
     }
 }

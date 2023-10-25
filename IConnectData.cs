@@ -12,6 +12,9 @@ namespace Assignment2
         bool SaveNewUser(User newUser);
         bool SaveNewEvent(Event newEvent);
 
+        bool CancelEvent(Event eventName);
+
+        bool ModifyEvent(Event eventName);
         List<Event> GetAllEventsInfo();
         User GetUserInfoByID(int ID);
         bool CheckAccountLogin(int ID, string password);
@@ -21,6 +24,5 @@ namespace Assignment2
         List<Event> GetEventsByTime(String eventTime);
 
         List<String> GetAllEventsName();
-        
     }
 }

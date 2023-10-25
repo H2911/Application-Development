@@ -47,6 +47,7 @@ namespace Assignment2
             this.colDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bnt_Back = new System.Windows.Forms.Button();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grSearching.SuspendLayout();
             this.gbEvents.SuspendLayout();
             this.SuspendLayout();
@@ -157,6 +158,7 @@ namespace Assignment2
             // lv_events
             // 
             this.lv_events.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
             this.colEventName,
             this.colPrice,
             this.colCapacity,
@@ -171,6 +173,7 @@ namespace Assignment2
             this.lv_events.TabIndex = 0;
             this.lv_events.UseCompatibleStateImageBehavior = false;
             this.lv_events.View = System.Windows.Forms.View.Details;
+            this.lv_events.DoubleClick += new System.EventHandler(this.lv_events_DoubleClick);
             // 
             // colEventName
             // 
@@ -206,7 +209,11 @@ namespace Assignment2
             this.bnt_Back.TabIndex = 7;
             this.bnt_Back.Text = "Back";
             this.bnt_Back.UseVisualStyleBackColor = true;
-            this.bnt_Back.Click += new System.EventHandler(this.button1_Click);
+            this.bnt_Back.Click += new System.EventHandler(this.bnt_Back_Click);
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
             // 
             // Events
             // 
@@ -250,5 +257,6 @@ namespace Assignment2
         private System.Windows.Forms.ColumnHeader colTime;
         private System.Windows.Forms.DateTimePicker timePicker;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ColumnHeader ID;
     }
 }
