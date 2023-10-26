@@ -17,9 +17,9 @@ C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.csproj.AssemblyReferen
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.AdminManagementForm.resources
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.CreateNewEventForm.resources
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.Events.resources
+C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.f_ModifyEvent.resources
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.Properties.Resources.resources
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.csproj.GenerateResource.cache
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.exe
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.pdb
-C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.f_ModifyEvent.resources
