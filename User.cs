@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2
 {
+    //Class to create user object to store information of event
     public class User
     {
         private string userName;

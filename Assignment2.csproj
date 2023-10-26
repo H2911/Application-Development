@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModifyEvents.cs">
+    <Compile Include="f_ModifyEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyEvents.Designer.cs">
-      <DependentUpon>ModifyEvents.cs</DependentUpon>
+    <Compile Include="f_ModifyEvent.Designer.cs">
+      <DependentUpon>f_ModifyEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="Event.cs" />
@@ -85,8 +85,8 @@
     <EmbeddedResource Include="f_Events.resx">
       <DependentUpon>f_Events.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyEvents.resx">
-      <DependentUpon>ModifyEvents.cs</DependentUpon>
+    <EmbeddedResource Include="f_ModifyEvent.resx">
+      <DependentUpon>f_ModifyEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

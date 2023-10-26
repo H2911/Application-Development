@@ -1,6 +1,6 @@
 ﻿namespace Assignment2
 {
-    partial class ModifyEvents
+    partial class f_ModifyEvent
     {
         /// <summary>
         /// Required designer variable.
@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.bnt_CancelEvent = new System.Windows.Forms.Button();
             this.lbID = new System.Windows.Forms.Label();
+            this.lb_participants = new System.Windows.Forms.Label();
             this.newEventGB.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -213,7 +214,7 @@
             // bnt_CancelEvent
             // 
             this.bnt_CancelEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_CancelEvent.Location = new System.Drawing.Point(345, 372);
+            this.bnt_CancelEvent.Location = new System.Drawing.Point(350, 372);
             this.bnt_CancelEvent.Name = "bnt_CancelEvent";
             this.bnt_CancelEvent.Size = new System.Drawing.Size(140, 44);
             this.bnt_CancelEvent.TabIndex = 10;
@@ -224,11 +225,20 @@
             // lbID
             // 
             this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(698, 36);
+            this.lbID.Location = new System.Drawing.Point(681, 36);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(20, 16);
             this.lbID.TabIndex = 11;
             this.lbID.Text = "ID";
+            // 
+            // lb_participants
+            // 
+            this.lb_participants.AutoSize = true;
+            this.lb_participants.Location = new System.Drawing.Point(681, 61);
+            this.lb_participants.Name = "lb_participants";
+            this.lb_participants.Size = new System.Drawing.Size(79, 16);
+            this.lb_participants.TabIndex = 12;
+            this.lb_participants.Text = "participants:";
             // 
             // ModifyEvents
             // 
@@ -236,6 +246,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lb_participants);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.bnt_CancelEvent);
             this.Controls.Add(this.bnt_Discard);
@@ -272,5 +283,6 @@
         public System.Windows.Forms.TextBox tb_EventName;
         private System.Windows.Forms.Button bnt_CancelEvent;
         public System.Windows.Forms.Label lbID;
+        public System.Windows.Forms.Label lb_participants;
     }
 }

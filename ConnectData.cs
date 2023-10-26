@@ -11,7 +11,10 @@ namespace Assignment2
 {
     public class ConnectData:IConnectData
     {
+        //Path to save events information
         protected string EVENTS_PATH = "Events.txt";
+
+        //Path to save users information
         protected string USERS_PATH = "Users.txt";
 
         public void CheckAccountLogin()
@@ -40,6 +43,7 @@ namespace Assignment2
             try
             {
                 var f = new FileInfo(EVENTS_PATH);
+                //First input
                 if (f.Length == 0)
                 {
                     int lines = File.ReadAllLines(EVENTS_PATH).Length;
@@ -47,6 +51,7 @@ namespace Assignment2
                     File.AppendAllText(EVENTS_PATH, String.Format("{0}", newEvent.ToString()));
                     return true;
                 }
+                //Second input
                 else
                 {
                     int lines = File.ReadAllLines(EVENTS_PATH).Length;
@@ -67,11 +72,13 @@ namespace Assignment2
             try
             {
                 var f = new FileInfo(USERS_PATH);
+                //First input
                 if (f.Length == 0)
                 {
                     File.AppendAllText(USERS_PATH, String.Format("{0}", newUser.ToString()));
                     return true;
                 }
+                //Second input
                 else
                 {
                     File.AppendAllText(USERS_PATH, String.Format("\n{0}", newUser.ToString()));
@@ -93,6 +100,8 @@ namespace Assignment2
             String roll;
             //get data from account file
             String[] usersData = File.ReadAllLines(USERS_PATH);
+
+            //Get data user from the database to save as user object
             foreach (string userData in usersData)
             {
                 if (int.Parse(userData.Split(',')[0].Trim()) == ID)
@@ -110,6 +119,7 @@ namespace Assignment2
         public List<Event> GetAllActiveEventsInfo()
         {
             List<Event> events = new List<Event>();
+            //Get all data from events database
             string[] eventsData = File.ReadAllLines(EVENTS_PATH);
             int eventID = 0;
             string eventName = "";
@@ -117,10 +127,14 @@ namespace Assignment2
             int eventCapacity = 0;
             string eventDate = "";
             string eventTime = "";
+            int participants = 0;
             string eventStatus = "";
+
+            //Load all info from the file
             foreach (string eventData in eventsData)
             {
-                eventStatus = eventData.Split(',')[6].Trim();
+                eventStatus = eventData.Split(',')[7].Trim();
+                //Fill the active events to use
                 if(eventStatus == "Active")
                 {
                     eventID = int.Parse(eventData.Split(',')[0].Trim());
@@ -129,7 +143,8 @@ namespace Assignment2
                     eventCapacity = int.Parse(eventData.Split(',')[3].Trim());
                     eventDate = eventData.Split(',')[4].Trim();
                     eventTime = eventData.Split(',')[5].Trim();
-                    events.Add(new Event(eventID, eventName, eventPrice, eventCapacity, eventDate, eventTime, eventStatus));
+                    participants = int.Parse(eventData.Split(',')[6].Trim());
+                    events.Add(new Event(eventID, eventName, eventPrice, eventCapacity, eventDate, eventTime,participants, eventStatus));
                 }
                 
             }
@@ -159,8 +174,10 @@ namespace Assignment2
             String[] usersData = File.ReadAllLines(USERS_PATH);
             foreach (string userData in usersData)
             {
+                //Check ID
                 if (int.Parse(userData.Split(',')[0].Trim()) == ID)
                 {
+                    //Check password
                     if (userData.Split(',')[2].Trim() == password)
                     {
                         return true;
@@ -198,6 +215,7 @@ namespace Assignment2
             {
                 for (int currentLine = 1; currentLine <= lines.Length; ++currentLine)
                 {
+                    //Replace the target line
                     if (currentLine == cancelEvent.EventID)
                     {
                         if (currentLine == lines.Length)
@@ -209,6 +227,7 @@ namespace Assignment2
                             writer.WriteLine(cancelEvent.ToString());
                         }
                     }
+                    //Rewrite the old line
                     else
                     {
                         if(currentLine == lines.Length)
@@ -227,7 +246,41 @@ namespace Assignment2
 
         public bool ModifyEvent(Event eventName)
         {
-            throw new NotImplementedException();
+            // Read the old file.
+            string[] lines = File.ReadAllLines(EVENTS_PATH);
+
+            // Write the new file over the old file.
+            using (StreamWriter writer = new StreamWriter(EVENTS_PATH))
+            {
+                for (int currentLine = 1; currentLine <= lines.Length; ++currentLine)
+                {
+                    //Replace the target line
+                    if (currentLine == eventName.EventID)
+                    {
+                        if (currentLine == lines.Length)
+                        {
+                            writer.Write(eventName.ToString());
+                        }
+                        else
+                        {
+                            writer.WriteLine(eventName.ToString());
+                        }
+                    }
+                    //Rewrite the old line
+                    else
+                    {
+                        if (currentLine == lines.Length)
+                        {
+                            writer.WriteLine(lines[currentLine - 1]);
+                        }
+                        else
+                        {
+                            writer.WriteLine(lines[currentLine - 1]);
+                        }
+                    }
+                }
+            }
+            return true;
         }
     }
 }

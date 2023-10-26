@@ -41,13 +41,14 @@ namespace Assignment2
             this.cbb_EventName = new System.Windows.Forms.ComboBox();
             this.gbEvents = new System.Windows.Forms.GroupBox();
             this.lv_events = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colEventName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colCapacity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bnt_Back = new System.Windows.Forms.Button();
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colParticipants = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grSearching.SuspendLayout();
             this.gbEvents.SuspendLayout();
             this.SuspendLayout();
@@ -163,7 +164,8 @@ namespace Assignment2
             this.colPrice,
             this.colCapacity,
             this.colDate,
-            this.colTime});
+            this.colTime,
+            this.colParticipants});
             this.lv_events.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_events.HideSelection = false;
             this.lv_events.Location = new System.Drawing.Point(18, 29);
@@ -175,30 +177,35 @@ namespace Assignment2
             this.lv_events.View = System.Windows.Forms.View.Details;
             this.lv_events.DoubleClick += new System.EventHandler(this.lv_events_DoubleClick);
             // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            this.ID.Width = 45;
+            // 
             // colEventName
             // 
             this.colEventName.Text = "Event Name";
-            this.colEventName.Width = 200;
+            this.colEventName.Width = 170;
             // 
             // colPrice
             // 
             this.colPrice.Text = "Price ($AUD)";
-            this.colPrice.Width = 120;
+            this.colPrice.Width = 110;
             // 
             // colCapacity
             // 
             this.colCapacity.Text = "Capacity";
-            this.colCapacity.Width = 101;
+            this.colCapacity.Width = 80;
             // 
             // colDate
             // 
             this.colDate.Text = "Date";
-            this.colDate.Width = 128;
+            this.colDate.Width = 100;
             // 
             // colTime
             // 
             this.colTime.Text = "Time";
-            this.colTime.Width = 112;
+            this.colTime.Width = 80;
             // 
             // bnt_Back
             // 
@@ -211,9 +218,10 @@ namespace Assignment2
             this.bnt_Back.UseVisualStyleBackColor = true;
             this.bnt_Back.Click += new System.EventHandler(this.bnt_Back_Click);
             // 
-            // ID
+            // colParticipants
             // 
-            this.ID.Text = "ID";
+            this.colParticipants.Text = "Participants";
+            this.colParticipants.Width = 100;
             // 
             // Events
             // 
@@ -258,5 +266,6 @@ namespace Assignment2
         private System.Windows.Forms.DateTimePicker timePicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader colParticipants;
     }
 }

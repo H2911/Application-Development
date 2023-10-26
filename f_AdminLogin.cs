@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Assignment2
 {
+    //Form for admin interact when login as admin roll
     public partial class AdminManagementForm : Form
     {
         public AdminManagementForm()
