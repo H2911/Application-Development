@@ -59,16 +59,16 @@ namespace Assignment2
         /// <returns></returns>
         public bool AddParticipants(int newParticipants)
         {
-            int newCapacity = participants + newParticipants;
-            if(newCapacity > eventCapacity) {
+            int newCapacity = this.participants + newParticipants;
+            if (newCapacity > eventCapacity)
+            {
                 MessageBox.Show(String.Format("Sorry the event just have {0} slots left!", eventCapacity - participants), "Not enough tickets!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            participants += newParticipants;
-            if(newCapacity == eventCapacity)
-            {
-                status = "Full";
-            }
+            this.participants += newParticipants;
+            ConnectData connectData = new ConnectData();
+            connectData.UpdateEventStatusInFile(this);
+
             return true;
         }
         public override string ToString()
