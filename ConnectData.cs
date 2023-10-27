@@ -279,5 +279,10 @@ namespace Assignment2
             }
             return true;
         }
+
+        public void UpdateEventStatusInFile(Event currentEvent)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
