@@ -85,5 +85,11 @@ namespace Assignment2
         /// </summary>
         /// <returns>list of event names</returns>
         List<String> GetAllActiveEventsName();
+
+        /// <summary>
+        /// Update event status in the database
+        /// </summary>
+        /// <param name="currentEvent"></param>
+        void UpdateEventStatusInFile(Event currentEvent);
     }
 }
