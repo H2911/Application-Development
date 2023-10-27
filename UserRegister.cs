@@ -92,10 +92,5 @@ namespace Assignment2
                 Console.WriteLine("Login.txt does not exist. Please create the file with login information.");
             }
         }
-
-        private void passwordBoxConfirm_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

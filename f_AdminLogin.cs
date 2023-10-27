@@ -32,7 +32,13 @@ namespace Assignment2
 
         private void bnt_Logout_Click(object sender, EventArgs e)
         {
-            
+            DialogResult dialogResult = MessageBox.Show("You want to logout?","Logout",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                UserLoginForm loginForm = new UserLoginForm();
+                loginForm.Show();
+                this.Hide();
+            }
         }
     }
 }

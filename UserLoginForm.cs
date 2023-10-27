@@ -12,26 +12,6 @@ namespace Assignment2
 
         }
 
-        private void f_UserLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void loginBtn_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Login Btn was clicked");
@@ -87,6 +67,10 @@ namespace Assignment2
                             // Change me to show Shun's code
                             Console.WriteLine("user granted");
                             MessageBox.Show("User logged in");
+                            this.Hide();
+                            var f_Available_Events = new f_Available_Events();
+                            f_Available_Events.Closed += (s, args) => this.Close();
+                            f_Available_Events.Show();
                         }
 
                     }

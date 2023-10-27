@@ -41,6 +41,7 @@ namespace Assignment2
             this.label1 = new System.Windows.Forms.Label();
             this.bnt_Previous = new System.Windows.Forms.Button();
             this.btn_Next = new System.Windows.Forms.Button();
+            this.btn_logout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@ namespace Assignment2
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewButtonColumn1,
             this.dataGridViewButtonColumn2});
-            this.dataGridView.Location = new System.Drawing.Point(157, 90);
+            this.dataGridView.Location = new System.Drawing.Point(100, 85);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 62;
             this.dataGridView.Size = new System.Drawing.Size(660, 319);
@@ -107,15 +108,15 @@ namespace Assignment2
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
-            this.label1.Location = new System.Drawing.Point(322, 32);
+            this.label1.Location = new System.Drawing.Point(314, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 41);
+            this.label1.Size = new System.Drawing.Size(264, 35);
             this.label1.TabIndex = 3;
             this.label1.Text = "All Available Events";
             // 
             // bnt_Previous
             // 
-            this.bnt_Previous.Location = new System.Drawing.Point(278, 421);
+            this.bnt_Previous.Location = new System.Drawing.Point(265, 421);
             this.bnt_Previous.Name = "bnt_Previous";
             this.bnt_Previous.Size = new System.Drawing.Size(111, 47);
             this.bnt_Previous.TabIndex = 4;
@@ -125,7 +126,7 @@ namespace Assignment2
             // 
             // btn_Next
             // 
-            this.btn_Next.Location = new System.Drawing.Point(529, 421);
+            this.btn_Next.Location = new System.Drawing.Point(516, 421);
             this.btn_Next.Name = "btn_Next";
             this.btn_Next.Size = new System.Drawing.Size(111, 47);
             this.btn_Next.TabIndex = 5;
@@ -133,10 +134,21 @@ namespace Assignment2
             this.btn_Next.UseVisualStyleBackColor = true;
             this.btn_Next.Click += new System.EventHandler(this.btn_Next_Click);
             // 
+            // btn_logout
+            // 
+            this.btn_logout.Location = new System.Drawing.Point(777, 12);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(99, 35);
+            this.btn_logout.TabIndex = 6;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
             // f_Available_Events
             // 
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(900, 506);
+            this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.btn_Next);
             this.Controls.Add(this.bnt_Previous);
             this.Controls.Add(this.pageLabel);
@@ -160,5 +172,6 @@ namespace Assignment2
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
         private Button bnt_Previous;
         private Button btn_Next;
+        private Button btn_logout;
     }
 }

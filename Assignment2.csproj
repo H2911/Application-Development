@@ -95,6 +95,18 @@
     <Compile Include="IConnectData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLoginForm.Designer.cs">
+      <DependentUpon>UserLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserRegister.Designer.cs">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="f_AdminLogin.resx">
       <DependentUpon>f_AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +145,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserLoginForm.resx">
+      <DependentUpon>UserLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserRegister.resx">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".vs\Asm2\v17\.wsuo" />
+    <None Include=".vs\ass2_draft\v17\.wsuo" />
+    <None Include=".vs\Assignment2\FileContentIndex\100859b3-dec0-4751-bceb-5ced24bef6db.vsidx" />
+    <None Include=".vs\Assignment2\FileContentIndex\650ef4c1-cd32-4876-9008-71c6bd0addab.vsidx" />
+    <None Include=".vs\Assignment2\FileContentIndex\7e587346-11ec-4fc6-88e3-ac6e47428c23.vsidx" />
+    <None Include=".vs\Assignment2\FileContentIndex\b6148f04-70ef-4cfa-a62c-a01726c71955.vsidx" />
+    <None Include=".vs\Assignment2\FileContentIndex\cc67d1ea-fc03-426f-a237-e585ebf89f80.vsidx" />
+    <None Include=".vs\Assignment2\v17\.wsuo" />
+    <None Include=".vs\VSWorkspaceState.json" />
     <None Include="bin\Debug\Assignment2.exe.config" />
     <None Include="obj\Debug\Assignment2.csproj.AssemblyReference.cache" />
     <None Include="obj\Debug\Assignment2.csproj.CoreCompileInputs.cache" />
@@ -153,6 +180,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="bin\Debug\Assignment2.exe" />
     <Content Include="bin\Debug\Assignment2.pdb" />
     <Content Include="bin\Debug\Events.txt" />
@@ -162,6 +190,7 @@
     <Content Include="obj\Debug\Assignment2.pdb" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include=".vs\New folder\v17\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>

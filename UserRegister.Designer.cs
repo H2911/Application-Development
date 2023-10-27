@@ -86,7 +86,6 @@
             this.passwordBoxConfirm.PasswordChar = '*';
             this.passwordBoxConfirm.Size = new System.Drawing.Size(304, 22);
             this.passwordBoxConfirm.TabIndex = 8;
-            this.passwordBoxConfirm.TextChanged += new System.EventHandler(this.passwordBoxConfirm_TextChanged);
             // 
             // registerBtn
             // 
@@ -145,10 +144,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Name = "UserRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserRegister";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

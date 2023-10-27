@@ -47,7 +47,6 @@
             this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter Email";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -58,18 +57,18 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Enter Password";
             // 
-            // textBox1
+            // emailBox
             // 
             this.emailBox.Location = new System.Drawing.Point(172, 35);
-            this.emailBox.Name = "textBox1";
+            this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(304, 22);
             this.emailBox.TabIndex = 2;
             this.emailBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // passwordBox
             // 
             this.passwordBox.Location = new System.Drawing.Point(172, 66);
-            this.passwordBox.Name = "textBox2";
+            this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(304, 22);
             this.passwordBox.TabIndex = 3;
@@ -88,7 +87,6 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // registerBtn
             // 
@@ -120,18 +118,18 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Arm+Leg Tickets";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // UserLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Name = "UserLoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "f_UserLogin";
-            this.Load += new System.EventHandler(this.f_UserLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
