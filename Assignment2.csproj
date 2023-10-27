@@ -133,21 +133,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include=".vs\Asm2\v17\.wsuo" />
-    <None Include=".vs\ass2_draft\v17\.wsuo" />
-    <None Include=".vs\Assignment2\FileContentIndex\322c0f6d-3179-427b-b6e6-d2c89be1ccfd.vsidx" />
-    <None Include=".vs\Assignment2\FileContentIndex\3cf8455c-e1df-4545-81dc-dd62c1700f88.vsidx" />
-    <None Include=".vs\Assignment2\FileContentIndex\bb483e28-587e-4508-986f-979e61a95a19.vsidx" />
-    <None Include=".vs\Assignment2\FileContentIndex\cb89c1cb-5696-4a6b-86d2-ec25984a08c5.vsidx" />
-    <None Include=".vs\Assignment2\FileContentIndex\d0921451-654a-435d-b41b-b4ebfeab5007.vsidx" />
-    <None Include=".vs\Assignment2\v17\.suo" />
-    <None Include=".vs\VSWorkspaceState.json" />
-    <None Include="bin\Debug\Assignment2.exe.config" />
-    <None Include="obj\Debug\Assignment2.csproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\Assignment2.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\Assignment2.csproj.GenerateResource.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <EmbeddedResource Include="f_Ticket .resx">
+      <DependentUpon>f_Ticket .cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -160,18 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\Assignment2.exe" />
-    <Content Include="bin\Debug\Assignment2.pdb" />
-    <Content Include="bin\Debug\Events.txt" />
-    <Content Include="bin\Debug\Users.txt" />
-    <Content Include="obj\Debug\Assignment2.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\Assignment2.exe" />
-    <Content Include="obj\Debug\Assignment2.pdb" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
