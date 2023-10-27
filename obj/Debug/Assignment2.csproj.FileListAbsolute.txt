@@ -23,3 +23,6 @@ C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.csproj.GenerateResourc
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.exe
 C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.pdb
+C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.f_Available_Events.resources
+C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.f_Details.resources
+C:\Users\Administrator\Desktop\Asm2\obj\Debug\Assignment2.TicketForm.resources
