@@ -203,7 +203,7 @@ namespace Assignment2
 
         public bool CancelEvent(Event cancelEvent)
         {
-            cancelEvent.Status = "Deactive";
+            cancelEvent.Status = "Inactive";
             // Read the old file.
             string[] lines = File.ReadAllLines(EVENTS_PATH);
 
