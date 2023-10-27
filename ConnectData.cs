@@ -279,5 +279,42 @@ namespace Assignment2
             }
             return true;
         }
+
+        public void UpdateEventStatusInFile(Event currentEvent)
+        {
+            // 1. Read all lines of a file into a list
+            var lines = System.IO.File.ReadAllLines(EVENTS_PATH).ToList();
+
+            // 2. Upadate the participants of the event
+            for (int i = 0; i < lines.Count; i++)
+            {
+                var columns = lines[i].Split(',');
+                if (columns[0] == currentEvent.EventID.ToString())
+                {
+                    columns[6] = currentEvent.Participants.ToString();
+                    lines[i] = string.Join(",", columns);
+                    break;
+                }
+            }
+
+            // 3. Find the specific event to update and change the status if the event is full
+            if (currentEvent.AvailableSpace <= 0)
+            {
+                for (int i = 0; i < lines.Count; i++)
+                {
+                    var columns = lines[i].Split(',');
+                    if (columns[0] == currentEvent.EventID.ToString())
+                    {
+                        columns[7] = "Inactive";
+                        lines[i] = string.Join(",", columns);
+                        break;
+                    }
+                }
+            }
+
+
+            // 3. Write updated content back to file
+            System.IO.File.WriteAllLines(EVENTS_PATH, lines);
+        }
     }
 }

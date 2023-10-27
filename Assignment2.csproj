@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="f_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_Details.Designer.cs">
+      <DependentUpon>f_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f_AvailableEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_AvailableEvent.Designer.cs">
+      <DependentUpon>f_AvailableEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="f_ModifyEvent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="f_ModifyEvent.Designer.cs">
       <DependentUpon>f_ModifyEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f_Ticket .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_Ticket .Designer.cs">
+      <DependentUpon>f_Ticket .cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="Event.cs" />
@@ -76,6 +94,12 @@
     <Compile Include="IConnectData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="f_Details.resx">
+      <DependentUpon>f_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_AvailableEvent.resx">
+      <DependentUpon>f_AvailableEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="f_AdminLogin.resx">
       <DependentUpon>f_AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +121,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="f_Ticket .resx">
+      <DependentUpon>f_Ticket .cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
