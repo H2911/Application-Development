@@ -1,0 +1,4 @@
+a:a:admin
+u:u:user
+user@mail.com:userPassword:user
+admin@mail.com:adminPassword:admin
